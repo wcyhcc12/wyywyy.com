@@ -1,0 +1,110 @@
+{
+  "_說明": "中英文共用的資料：網址、照片、年份、作品連結。文字請改 zh.json 與 en.json，用 id 對應。改完按 Commit，約 1 分鐘後網站更新。規則：文字用雙引號；項目之間要有逗號，最後一項後面不能有逗號。",
+
+  "site": {
+    "domain": "https://wyywyy.com",
+    "email_user": "yuhung1112",
+    "email_domain": "gmail.com",
+    "instagram": "wib.o.n",
+    "og_image": "/images/og.jpg"
+  },
+
+  "_photos說明": "照片放在 images/photos/，每張要有大圖（w04.webp）和小圖（w04-t.webp）。cat 是分類代號，名稱寫在 zh/en 的 photo_cats。排在最前面的 20 張會出現在首屏的照片環。",
+  "photos": [
+    { "id": "w04", "cat": "city" },
+    { "id": "w13", "cat": "stage" },
+    { "id": "w06", "cat": "city" },
+    { "id": "w17", "cat": "sky" },
+    { "id": "w12", "cat": "stage" },
+    { "id": "w15", "cat": "temple" },
+    { "id": "w01", "cat": "sky" },
+    { "id": "w09", "cat": "stage" },
+    { "id": "w14", "cat": "temple" },
+    { "id": "w08", "cat": "city" },
+    { "id": "w21", "cat": "stage" },
+    { "id": "w05", "cat": "city" },
+    { "id": "w16", "cat": "sky" },
+    { "id": "w02", "cat": "event" },
+    { "id": "w07", "cat": "city" },
+    { "id": "w18", "cat": "stage" },
+    { "id": "w10", "cat": "sky" },
+    { "id": "w03", "cat": "stage" },
+    { "id": "w19", "cat": "stage" },
+    { "id": "w20", "cat": "stage" }
+  ],
+  "photo_cats": ["stage", "city", "sky", "temple", "event"],
+
+  "_timeline說明": "end 寫 now 會顯示「至今」。current 設 true 的項目前面是粉紅色圓點。",
+  "timeline": [
+    {
+      "group": "thu",
+      "items": [
+        { "id": "thu-history", "start": "2026", "end": "now", "current": true },
+        { "id": "thu-rock", "start": "2026", "end": "now", "current": true }
+      ]
+    },
+    {
+      "group": "hs",
+      "items": [
+        { "id": "hs-council", "start": "2023", "end": "2026" },
+        { "id": "hs-rock", "start": "2023", "end": "2026" },
+        { "id": "hs-events", "start": "2023", "end": "2026" }
+      ]
+    },
+    {
+      "group": "lang",
+      "items": [
+        { "id": "lang-zh" },
+        { "id": "lang-en" },
+        { "id": "lang-tw" }
+      ]
+    }
+  ],
+  "timeline_photo": "w21",
+
+  "_skills說明": "photo 填 images/photos 的照片代號，或 images/sites 裡的圖片路徑。",
+  "skills": [
+    { "id": "photo", "photo": "/images/photos/w18-t.webp" },
+    { "id": "music", "photo": "/images/photos/w03-t.webp" },
+    { "id": "history", "photo": "/images/photos/w15-t.webp" },
+    { "id": "code", "photo": "/images/sites/world-history-2.webp" }
+  ],
+
+  "_works說明": "images 是作品列的截圖或照片（2–4 張）。status：live 正常、building 建置中。romanized 是英文版還沒翻譯時顯示的拼音。",
+  "works": [
+    {
+      "id": "world-history",
+      "url": "https://wcyhcc12.github.io/World-History/",
+      "year": "2026",
+      "status": "live",
+      "images": ["/images/sites/world-history-1.webp", "/images/sites/world-history-2.webp", "/images/sites/world-history-3.webp"],
+      "romanized": "Shih-chieh-shih Pi-chi"
+    },
+    {
+      "id": "greek-roman",
+      "url": "https://wcyhcc12.github.io/the-History-of-Greek-and-Roman-religions/",
+      "year": "2026",
+      "status": "live",
+      "images": ["/images/sites/greek-roman-1.webp", "/images/sites/greek-roman-2.webp", "/images/sites/greek-roman-3.webp"],
+      "romanized": "Ku Hsi-la Lo-ma Tsung-chiao-shih Pi-chi"
+    },
+    {
+      "id": "shop",
+      "url": "https://wcyhcc12.github.io/",
+      "year": "2026",
+      "status": "building",
+      "images": ["/images/sites/shop-1.webp", "/images/sites/shop-2.webp", "/images/sites/shop-3.webp"],
+      "romanized": "Chen Yu-Hung She-ying"
+    },
+    {
+      "id": "vsco",
+      "url": "https://vsco.co/wyywyy12/gallery",
+      "year": "",
+      "status": "live",
+      "images": ["/images/photos/w17.webp", "/images/photos/w16.webp", "/images/photos/w10.webp"],
+      "romanized": "VSCO"
+    }
+  ],
+
+  "contact_photo": "w01"
+}

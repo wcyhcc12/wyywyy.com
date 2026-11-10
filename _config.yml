@@ -1,0 +1,9 @@
+# 網站設定（一般不需要改）
+title: 陳宥宏 Yu-Hung Chen
+url: "https://wyywyy.com"
+baseurl: ""
+timezone: Asia/Taipei
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

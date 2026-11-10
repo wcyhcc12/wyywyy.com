@@ -1,0 +1,139 @@
+{
+  "_說明": "中文版的所有文字，用 id 對應 shared.json。只放純文字，不要放 HTML 標籤。",
+
+  "meta": {
+    "title": "陳宥宏｜歷史系學生・攝影創作者・自學開發者",
+    "description": "陳宥宏，東海大學歷史學系學生。擅長在低光裡拍舞台、廟宇與城市的夜，也把課堂內容做成互動式筆記網站。歡迎攝影合作與課業交流。"
+  },
+
+  "ui": {
+    "skip": "跳到主要內容",
+    "nav_timeline": "學經歷",
+    "nav_skills": "技能",
+    "nav_works": "作品",
+    "nav_photos": "攝影",
+    "nav_contact": "聯絡",
+    "menu": "選單",
+    "close": "關閉",
+    "lang_switch": "EN",
+    "lang_switch_label": "English version",
+    "theme_to_light": "淺色",
+    "theme_to_dark": "深色",
+    "theme_label": "切換深淺色",
+    "now": "至今",
+    "visit": "前往網站",
+    "building": "建置中",
+    "online": "上線中",
+    "filter_all": "全部",
+    "copy": "複製信箱",
+    "copied": "已複製",
+    "prev": "上一張",
+    "next": "下一張",
+    "updated": "最後更新",
+    "rights": "網站上的照片皆為陳宥宏拍攝，著作權所有。",
+    "local_time": "台中現在",
+    "write_me": "寫信給我"
+  },
+
+  "hero": {
+    "name": "陳宥宏",
+    "sentence": "歷史系學生・攝影創作者・自學開發者。擅長在低光裡拍舞台、廟宇與城市的夜，也把課堂做成網站。",
+    "action": "看作品",
+    "email": "Email",
+    "instagram": "Instagram"
+  },
+
+  "sections": {
+    "timeline_title": "學經歷",
+    "skills_title": "興趣與技能",
+    "works_title": "作品",
+    "photos_title": "攝影",
+    "photos_statement": "從高中班聯會的活動紀錄開始拿相機。現在最常待在光線最少的地方：舞台前、廟埕的火邊、跨年夜的街上。",
+    "contact_statement": "攝影邀約、課業交流，或想一起做網站，都歡迎寫信給我。",
+    "contact_question": "從這裡聯絡",
+    "contact_place": "東海大學，台中"
+  },
+
+  "groups": {
+    "thu": "東海大學",
+    "hs": "高中",
+    "lang": "語言"
+  },
+
+  "timeline": {
+    "thu-history": { "title": "歷史學系 學士班" },
+    "thu-rock": { "title": "熱音社 社員" },
+    "hs-council": { "title": "班聯會 資訊傳播長" },
+    "hs-rock": { "title": "熱音社 鍵盤教學" },
+    "hs-events": { "title": "籌辦敬師活動、才藝大賽、藝人晚會" },
+    "lang-zh": { "title": "中文", "value": "母語" },
+    "lang-en": { "title": "英文", "value": "" },
+    "lang-tw": { "title": "台語", "value": "" }
+  },
+
+  "skills": {
+    "photo": { "title": "攝影與影像", "items": "演出、人像、街拍、商業、婚禮；Vlog、訪談與微紀錄片" },
+    "music": { "title": "音樂", "items": "鋼琴、小提琴、吉他、樂團鍵盤" },
+    "history": { "title": "歷史與知識整理", "items": "課程筆記、時間軸、地圖、互動測驗" },
+    "code": { "title": "程式與網頁", "items": "HTML、CSS、JavaScript、Python、Flask、GitHub" }
+  },
+
+  "works": {
+    "world-history": {
+      "title": "世界史筆記網站",
+      "kind": "課程筆記網站",
+      "desc": "115-1 世界史（上）：從西方遺產、兩河流域到古埃及，附時間軸、分布示意圖與模擬題庫。"
+    },
+    "greek-roman": {
+      "title": "古希臘羅馬宗教史筆記網站",
+      "kind": "課程筆記網站",
+      "desc": "色諾芬《遠征記》裡的神意與獻祭、泛希臘宗教、神話譜系與奧林匹斯十二主神，附模擬題庫。"
+    },
+    "shop": {
+      "title": "陳宥宏攝影",
+      "kind": "攝影服務與作品販售",
+      "desc": "拍攝方案、作品數位檔授權與實體輸出。網站還在調整中。"
+    },
+    "vsco": {
+      "title": "VSCO 攝影集",
+      "kind": "攝影集",
+      "desc": "天空、城市與日常的長期紀錄。"
+    }
+  },
+
+  "photo_cats": {
+    "stage": "舞台演出",
+    "city": "城市街拍",
+    "sky": "天空自然",
+    "temple": "人文廟宇",
+    "event": "活動紀錄"
+  },
+
+  "photos": {
+    "w04": "跨年煙火",
+    "w13": "舞台之光",
+    "w06": "暮色殿堂",
+    "w17": "海岸雲層",
+    "w12": "律動",
+    "w15": "廟埕",
+    "w01": "滿月",
+    "w09": "吉他手",
+    "w14": "火光",
+    "w08": "城市車流",
+    "w21": "樂團",
+    "w05": "交會",
+    "w16": "落日",
+    "w02": "燭光",
+    "w07": "簷下",
+    "w18": "逆光",
+    "w10": "紅月",
+    "w03": "台前",
+    "w19": "藍霧",
+    "w20": "速度"
+  },
+
+  "footer": {
+    "statement": "陳宥宏的攝影、筆記網站與經歷，持續更新。",
+    "wordmark": "陳宥宏"
+  }
+}

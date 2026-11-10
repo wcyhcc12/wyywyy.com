@@ -1,0 +1,139 @@
+{
+  "_說明": "英文版的所有文字。某個項目還沒翻譯時可以不寫，英文版會自動顯示 shared.json 裡的 romanized（拼音）。",
+
+  "meta": {
+    "title": "Yu-Hung Chen | History Student, Photographer, Self-taught Developer",
+    "description": "Yu-Hung Chen, history student at Tunghai University, Taiwan. Low-light photography of stages, temples and the city at night, and interactive study websites built from his courses."
+  },
+
+  "ui": {
+    "skip": "Skip to content",
+    "nav_timeline": "Background",
+    "nav_skills": "Skills",
+    "nav_works": "Work",
+    "nav_photos": "Photographs",
+    "nav_contact": "Contact",
+    "menu": "Menu",
+    "close": "Close",
+    "lang_switch": "中文",
+    "lang_switch_label": "中文版",
+    "theme_to_light": "Light",
+    "theme_to_dark": "Dark",
+    "theme_label": "Switch colour theme",
+    "now": "present",
+    "visit": "Visit site",
+    "building": "In progress",
+    "online": "Live",
+    "filter_all": "All",
+    "copy": "Copy address",
+    "copied": "Copied",
+    "prev": "Previous",
+    "next": "Next",
+    "updated": "Last updated",
+    "rights": "All photographs on this site are by Yu-Hung Chen.",
+    "local_time": "Taichung time",
+    "write_me": "Write to me"
+  },
+
+  "hero": {
+    "name": "Yu-Hung Chen",
+    "sentence": "History student, photographer and self-taught developer. I shoot stages, temples and the city after dark, and turn my courses into websites.",
+    "action": "See the work",
+    "email": "Email",
+    "instagram": "Instagram"
+  },
+
+  "sections": {
+    "timeline_title": "Background",
+    "skills_title": "Skills and interests",
+    "works_title": "Work",
+    "photos_title": "Photographs",
+    "photos_statement": "I picked up a camera to cover student council events in high school. I still work where the light is lowest: in front of a stage, beside a temple fire, out on New Year's Eve.",
+    "contact_statement": "Photography commissions, study partners, or a website to build together: write to me.",
+    "contact_question": "Get in touch",
+    "contact_place": "Tunghai University, Taichung"
+  },
+
+  "groups": {
+    "thu": "Tunghai University",
+    "hs": "High school",
+    "lang": "Languages"
+  },
+
+  "timeline": {
+    "thu-history": { "title": "B.A. in History" },
+    "thu-rock": { "title": "Member, Rock Music Club" },
+    "hs-council": { "title": "Director of Communications, Student Council" },
+    "hs-rock": { "title": "Keyboard instructor, Rock Music Club" },
+    "hs-events": { "title": "Organised the teachers' appreciation event, talent show and concert night" },
+    "lang-zh": { "title": "Mandarin", "value": "native" },
+    "lang-en": { "title": "English", "value": "" },
+    "lang-tw": { "title": "Taiwanese Hokkien", "value": "" }
+  },
+
+  "skills": {
+    "photo": { "title": "Photography and video", "items": "Live music, portraits, street, commercial, weddings; vlogs, interviews, short documentary" },
+    "music": { "title": "Music", "items": "Piano, violin, guitar, band keyboard" },
+    "history": { "title": "History and study design", "items": "Course notes, timelines, maps, quizzes" },
+    "code": { "title": "Code and web", "items": "HTML, CSS, JavaScript, Python, Flask, GitHub" }
+  },
+
+  "works": {
+    "world-history": {
+      "title": "World History notes",
+      "kind": "Study website, in Chinese",
+      "desc": "World History I, from the Western heritage and Mesopotamia to ancient Egypt, with timelines, maps and practice quizzes."
+    },
+    "greek-roman": {
+      "title": "Greek and Roman Religions notes",
+      "kind": "Study website, in Chinese",
+      "desc": "Omens and sacrifice in Xenophon's Anabasis, Panhellenic religion, mythological genealogy and the Olympians, with practice quizzes."
+    },
+    "shop": {
+      "title": "Yu-Hung Chen Photography",
+      "kind": "Services and prints",
+      "desc": "Shoot packages, image licensing and prints. Still being refined."
+    },
+    "vsco": {
+      "title": "VSCO gallery",
+      "kind": "Photo archive",
+      "desc": "An ongoing record of sky, city and everyday life."
+    }
+  },
+
+  "photo_cats": {
+    "stage": "Stage",
+    "city": "City",
+    "sky": "Sky",
+    "temple": "Temples",
+    "event": "Events"
+  },
+
+  "photos": {
+    "w04": "New Year's fireworks",
+    "w13": "Stage light",
+    "w06": "Hall at dusk",
+    "w17": "Clouds over the coast",
+    "w12": "Rhythm",
+    "w15": "Temple square",
+    "w01": "Full moon",
+    "w09": "Guitarist",
+    "w14": "Firelight",
+    "w08": "Traffic",
+    "w21": "The band",
+    "w05": "Crossing",
+    "w16": "Sunset",
+    "w02": "Candlelight",
+    "w07": "Under the eaves",
+    "w18": "Backlit",
+    "w10": "Red moon",
+    "w03": "Front of stage",
+    "w19": "Blue haze",
+    "w20": "Speed"
+  },
+
+  "footer": {
+    "statement": "Photographs, study sites and background of Yu-Hung Chen, kept up to date.",
+    "wordmark": "Yu-Hung Chen"
+  }
+}

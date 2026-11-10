@@ -1,0 +1,243 @@
+{%- comment -%}
+  中英文兩頁共用的版型。內容都從 _data/ 讀取，平常不需要改這個檔案。
+{%- endcomment -%}
+{%- assign L = page.lang -%}
+{%- assign t = site.data[L] -%}
+{%- assign zh = site.data.zh -%}
+{%- assign s = site.data.shared -%}
+{%- if L == "en" -%}
+  {%- assign html_lang = "en" -%}{%- assign home = "/en/" -%}{%- assign other = "/" -%}{%- assign other_lang = "zh" -%}{%- assign og_locale = "en_US" -%}{%- assign sep = ", " -%}{%- assign stop = ". " -%}
+{%- else -%}
+  {%- assign html_lang = "zh-Hant-TW" -%}{%- assign home = "/" -%}{%- assign other = "/en/" -%}{%- assign other_lang = "en" -%}{%- assign og_locale = "zh_TW" -%}{%- assign sep = "，" -%}{%- assign stop = "。" -%}
+{%- endif -%}
+<!doctype html>
+<html lang="{{ html_lang }}" data-lang="{{ L }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{ t.meta.title }}</title>
+<meta name="description" content="{{ t.meta.description }}">
+<link rel="canonical" href="{{ s.site.domain }}{{ home }}">
+<link rel="alternate" hreflang="zh-Hant" href="{{ s.site.domain }}/">
+<link rel="alternate" hreflang="en" href="{{ s.site.domain }}/en/">
+<link rel="alternate" hreflang="x-default" href="{{ s.site.domain }}/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ t.hero.name }}">
+<meta property="og:title" content="{{ t.meta.title }}">
+<meta property="og:description" content="{{ t.meta.description }}">
+<meta property="og:url" content="{{ s.site.domain }}{{ home }}">
+<meta property="og:image" content="{{ s.site.domain }}{{ s.site.og_image }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="{{ og_locale }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0d060b">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script>
+(function(){var d=document.documentElement;d.className+=" js";try{
+  var th=localStorage.getItem("theme");
+  if(!th){th=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";}
+  d.setAttribute("data-theme",th);
+  var lp=localStorage.getItem("lang"),here=d.getAttribute("data-lang");
+  var fromSelf=document.referrer&&document.referrer.indexOf(location.host)>-1;
+  if(lp&&lp!==here&&!fromSelf){location.replace(here==="en"?"/":"/en/");}
+}catch(e){d.setAttribute("data-theme","dark");}})();
+</script>
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,700&display=swap">
+{%- if L == "en" %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@500&text=%E9%99%B3%E5%AE%A5%E5%AE%8F%E4%B8%AD%E6%96%87&display=swap">
+{%- else %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@400;500;700&display=swap">
+{%- endif %}
+<link rel="stylesheet" href="/assets/css/site.css?v={{ site.time | date: '%s' }}">
+</head>
+<body>
+<a class="skip" href="#main">{{ t.ui.skip }}</a>
+
+<header class="bar">
+  <a class="wordmark" href="{{ home }}">{{ t.hero.name }}</a>
+  <nav class="nav" id="nav" aria-label="{{ t.ui.menu }}">
+    <a href="#timeline">{{ t.ui.nav_timeline }}</a>
+    <a href="#skills">{{ t.ui.nav_skills }}</a>
+    <a href="#works">{{ t.ui.nav_works }}</a>
+    <a href="#photos">{{ t.ui.nav_photos }}</a>
+    <a href="#contact">{{ t.ui.nav_contact }}</a>
+  </nav>
+  <div class="bar-tools">
+    <a class="bar-link" href="{{ other }}" hreflang="{% if L == 'en' %}zh-Hant{% else %}en{% endif %}" lang="{% if L == 'en' %}zh-Hant{% else %}en{% endif %}" data-target-lang="{{ other_lang }}" aria-label="{{ t.ui.lang_switch_label }}">{{ t.ui.lang_switch }}</a>
+    <button class="bar-link theme-toggle" type="button" aria-label="{{ t.ui.theme_label }}" data-light="{{ t.ui.theme_to_light }}" data-dark="{{ t.ui.theme_to_dark }}">{{ t.ui.theme_to_light }}</button>
+    <button class="bar-link menu-toggle" type="button" aria-controls="nav" aria-expanded="false" data-open="{{ t.ui.menu }}" data-close="{{ t.ui.close }}">{{ t.ui.menu }}</button>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" aria-labelledby="hero-name">
+  <div class="ring" aria-label="{{ t.sections.photos_title }}">
+    {%- for p in s.photos limit: 20 %}
+    {%- assign cap = t.photos[p.id] | default: zh.photos[p.id] -%}
+    {%- assign cat = t.photo_cats[p.cat] | default: zh.photo_cats[p.cat] -%}
+    <button class="frame f{{ forloop.index }}" type="button" data-photo="{{ p.id }}" data-caption="{{ cap }}{{ sep }}{{ cat }}" aria-label="{{ cap }}{{ sep }}{{ cat }}"><img src="/images/photos/{{ p.id }}-t.webp" alt="" width="560" height="373" decoding="async"></button>
+    {%- endfor %}
+  </div>
+  <div class="core">
+    <h1 class="display" id="hero-name"><span class="line"><span>{{ t.hero.name }}</span></span></h1>
+    <p class="core-sentence" aria-live="polite"><span class="core-default">{{ t.hero.sentence }}</span><span class="core-caption" hidden></span></p>
+    <div class="core-actions">
+      <a class="button" href="#works">{{ t.hero.action }}</a>
+      <a class="text-link js-mail" href="#contact" data-u="{{ s.site.email_user }}" data-d="{{ s.site.email_domain }}">{{ t.hero.email }}</a>
+      <a class="text-link" href="https://www.instagram.com/{{ s.site.instagram }}/" rel="noopener">{{ t.hero.instagram }}</a>
+    </div>
+  </div>
+</section>
+
+<section class="section timeline" id="timeline" aria-labelledby="h-timeline">
+  <div class="timeline-text">
+    <h2 class="head" id="h-timeline">{{ t.sections.timeline_title }}</h2>
+    {%- for g in s.timeline %}
+    <div class="tl-group" data-in>
+      <p class="tl-group-name">{{ t.groups[g.group] | default: zh.groups[g.group] }}</p>
+      <ul class="tl-rows">
+        {%- for it in g.items %}
+        {%- assign tt = t.timeline[it.id] -%}
+        {%- assign tz = zh.timeline[it.id] -%}
+        <li class="tl-row">
+          <span class="tl-name"><i class="dot{% if it.current %} is-now{% endif %}" aria-hidden="true"></i>{{ tt.title | default: it.romanized | default: tz.title }}</span>
+          <span class="tl-value">{% if it.start %}{{ it.start }}{% if it.end and it.end != it.start %}–{% if it.end == "now" %}{{ t.ui.now }}{% else %}{{ it.end }}{% endif %}{% endif %}{% else %}{{ tt.value }}{% endif %}</span>
+        </li>
+        {%- endfor %}
+      </ul>
+    </div>
+    {%- endfor %}
+  </div>
+  {%- assign tp = s.timeline_photo -%}
+  <figure class="timeline-photo" data-in>
+    <img src="/images/photos/{{ tp }}.webp" alt="{{ t.photos[tp] | default: zh.photos[tp] }}" width="1800" height="1200" loading="lazy" decoding="async">
+    <figcaption>{{ t.photos[tp] | default: zh.photos[tp] }}</figcaption>
+  </figure>
+</section>
+
+<section class="section skills" id="skills" aria-labelledby="h-skills">
+  <h2 class="head" id="h-skills">{{ t.sections.skills_title }}</h2>
+  <ul class="tiles">
+    {%- for sk in s.skills %}
+    {%- assign st = t.skills[sk.id] | default: zh.skills[sk.id] -%}
+    <li class="tile tint-{{ forloop.index }}" data-in>
+      <div class="tile-img"><img src="{{ sk.photo }}" alt="" width="560" height="700" loading="lazy" decoding="async"></div>
+      <h3 class="tile-title">{{ st.title }}</h3>
+      <p class="tile-text">{{ st.items }}</p>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+
+<section class="section works" id="works" aria-labelledby="h-works">
+  <h2 class="head" id="h-works">{{ t.sections.works_title }}</h2>
+  {%- for w in s.works %}
+  {%- assign wt = t.works[w.id] -%}
+  {%- assign wz = zh.works[w.id] -%}
+  {%- if L == "en" -%}{%- assign wtitle = wt.title | default: w.romanized | default: wz.title -%}{%- else -%}{%- assign wtitle = wz.title -%}{%- endif -%}
+  <article class="project" aria-labelledby="p-{{ w.id }}">
+    <div class="strip" tabindex="0" aria-label="{{ wtitle }}">
+      {%- for im in w.images %}
+      <a class="slide" href="{{ w.url }}" rel="noopener" tabindex="-1"><img src="{{ im }}" alt="{{ wtitle }}" width="1200" height="712" loading="lazy" decoding="async"></a>
+      {%- endfor %}
+    </div>
+    <div class="facts" data-in>
+      <div class="fact-name">
+        <h3 id="p-{{ w.id }}"><a href="{{ w.url }}" rel="noopener">{{ wtitle }}</a></h3>
+        <p class="fact-kind">{{ wt.kind | default: wz.kind }}</p>
+      </div>
+      <p class="fact-desc">{{ wt.desc }}</p>
+      <p class="fact-status{% if w.status == 'building' %} is-building{% endif %}">{% if w.status == "building" %}{{ t.ui.building }}{% else %}{{ t.ui.online }}{% endif %}{% if w.year != "" %}{{ sep }}{{ w.year }}{% endif %}</p>
+      <p class="fact-link"><a class="text-link" href="{{ w.url }}" rel="noopener">{{ t.ui.visit }}<svg class="arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M5 3h8v8"/></svg></a></p>
+    </div>
+  </article>
+  {%- endfor %}
+</section>
+
+<section class="section photos" id="photos" aria-labelledby="h-photos">
+  <div class="photos-head">
+    <h2 class="head" id="h-photos">{{ t.sections.photos_title }}</h2>
+    <p class="statement" data-in>{{ t.sections.photos_statement }}</p>
+  </div>
+  <div class="filters" role="group" aria-label="{{ t.sections.photos_title }}">
+    <button type="button" class="filter is-on" data-filter="all" aria-pressed="true">{{ t.ui.filter_all }}</button>
+    {%- for c in s.photo_cats %}
+    <button type="button" class="filter" data-filter="{{ c }}" aria-pressed="false">{{ t.photo_cats[c] | default: zh.photo_cats[c] }}</button>
+    {%- endfor %}
+  </div>
+  <div class="sheet">
+    {%- for p in s.photos %}
+    {%- assign cap = t.photos[p.id] | default: zh.photos[p.id] -%}
+    {%- assign cat = t.photo_cats[p.cat] | default: zh.photo_cats[p.cat] -%}
+    <figure class="shot" data-cat="{{ p.cat }}">
+      <button class="shot-open" type="button" data-photo="{{ p.id }}" aria-label="{{ cap }}"><img src="/images/photos/{{ p.id }}-t.webp" alt="{{ cap }}" loading="lazy" decoding="async"></button>
+      <figcaption>{{ cap }}{{ sep }}{{ cat }}</figcaption>
+    </figure>
+    {%- endfor %}
+  </div>
+</section>
+
+<section class="section contact" id="contact" aria-labelledby="h-contact">
+  <h2 class="visually-hidden" id="h-contact">{{ t.ui.nav_contact }}</h2>
+  <p class="statement contact-statement" data-in>{{ t.sections.contact_statement }}</p>
+  {%- assign cp = s.contact_photo -%}
+  <figure class="contact-photo" data-in><img src="/images/photos/{{ cp }}-t.webp" alt="{{ t.photos[cp] | default: zh.photos[cp] }}" width="560" height="560" loading="lazy" decoding="async"></figure>
+  <div class="contact-links" data-in>
+    <p class="contact-question">{{ t.sections.contact_question }}</p>
+    <p><a class="big-link js-mail js-mail-text" href="#contact" data-u="{{ s.site.email_user }}" data-d="{{ s.site.email_domain }}">{{ s.site.email_user }} [at] {{ s.site.email_domain }}</a></p>
+    <p><a class="big-link" href="https://www.instagram.com/{{ s.site.instagram }}/" rel="noopener">Instagram @{{ s.site.instagram }}</a></p>
+    <p class="contact-meta">{{ t.sections.contact_place }} <button class="copy js-copy" type="button" data-u="{{ s.site.email_user }}" data-d="{{ s.site.email_domain }}" data-done="{{ t.ui.copied }}">{{ t.ui.copy }}</button></p>
+  </div>
+</section>
+
+</main>
+
+<footer class="board">
+  <div class="cell cell-statement">
+    <p class="cell-big">{{ t.footer.statement }}</p>
+    <p class="cell-small">© {{ site.time | date: "%Y" }} {{ t.hero.name }}{{ stop }}{{ t.ui.rights }} {{ t.ui.updated }} {{ site.time | date: "%Y-%m-%d" }}</p>
+  </div>
+  <nav class="cell cell-nav" aria-label="{{ t.ui.menu }}">
+    <a href="#timeline">{{ t.ui.nav_timeline }}</a>
+    <a href="#skills">{{ t.ui.nav_skills }}</a>
+    <a href="#works">{{ t.ui.nav_works }}</a>
+    <a href="#photos">{{ t.ui.nav_photos }}</a>
+    <a href="{{ other }}" lang="{% if L == 'en' %}zh-Hant{% else %}en{% endif %}">{{ t.ui.lang_switch_label }}</a>
+  </nav>
+  <div class="cell cell-time">
+    <p>{{ t.ui.local_time }}</p>
+    <p class="cell-big js-clock">—</p>
+  </div>
+  <div class="cell cell-mail">
+    <a class="cell-big js-mail js-mail-text" href="#contact" data-u="{{ s.site.email_user }}" data-d="{{ s.site.email_domain }}">{{ s.site.email_user }} [at] {{ s.site.email_domain }}</a>
+  </div>
+  <a class="cell cell-name" href="#main">{{ t.footer.wordmark }}</a>
+  <a class="cell cell-write js-mail" href="#contact" data-u="{{ s.site.email_user }}" data-d="{{ s.site.email_domain }}">
+    <span class="cell-write-text">{{ t.ui.write_me }}</span>
+    <svg class="cell-arrow" viewBox="0 0 48 48" aria-hidden="true"><path d="M10 38 38 10M16 10h22v22"/></svg>
+  </a>
+</footer>
+
+<dialog class="loupe" aria-label="{{ t.sections.photos_title }}">
+  <figure class="loupe-figure">
+    <img class="loupe-img" src="" alt="">
+    <figcaption class="loupe-cap"></figcaption>
+  </figure>
+  <div class="loupe-controls">
+    <button type="button" class="loupe-btn loupe-prev">{{ t.ui.prev }}</button>
+    <button type="button" class="loupe-btn loupe-next">{{ t.ui.next }}</button>
+    <button type="button" class="loupe-btn loupe-close">{{ t.ui.close }}</button>
+  </div>
+</dialog>
+
+<script type="application/json" id="photo-data">[{% for p in s.photos %}{"id":"{{ p.id }}","cap":{{ t.photos[p.id] | default: zh.photos[p.id] | jsonify }},"cat":{{ t.photo_cats[p.cat] | default: zh.photo_cats[p.cat] | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %}]</script>
+<script src="/assets/js/site.js?v={{ site.time | date: '%s' }}" defer></script>
+</body>
+</html>
